@@ -35,8 +35,8 @@ const Dashboard = () => {
 
   const [data, setData] = useState([]);
   const [inputField, setInputField] = useState({
-    policyType: "",
-    pages: "",
+    periodtype: "",
+    page: "",
   });
 
   const handleChange = (value, property) => {
@@ -54,26 +54,27 @@ const Dashboard = () => {
     (async () => {
       const res = await service.get("http://localhost:9292/visits");
 
-      if (res?.data?.success) {
-        setData(res.data);
-      }
+      // if (res?.data?.success) {
+      setData(res.data);
+      // }
     })();
   }, []);
 
   useEffect(() => {
     console.log(inputField);
+    console.log(data)
     const filtered = data.filter((el) => {
       const month = moment(el.perioddate).month();
       if (
-        (inputField.periodType && el.periodType === inputField.periodType) ||
-        (inputField.pages && el.policyType === inputField.policyType) ||
+        (inputField.periodtype && el.periodtype === inputField.periodtype) ||
+        (inputField.page && el.page === inputField.page) ||
         (selectedDayRange.from.month > month &&
-          selectedDayRange?.from?.month < month)
+          selectedDayRange?.to?.month < month)
       ) {
         return el;
       }
     });
-
+    console.log(filtered)
     let sum = 0;
     filtered.map((el) => {
       sum += el.visits;
@@ -154,14 +155,14 @@ const Dashboard = () => {
           <div className="input_container__dropdowns">
             <Dropdown
               items={periodTypeDropdown}
-              change={(val) => handleChange(val, "policyType")}
+              change={(val) => handleChange(val, "periodtype")}
               className=""
               title="Policy Type"
             />
 
             <Dropdown
               items={pageDropdown}
-              change={(val) => handleChange(val, "pages")}
+              change={(val) => handleChange(val, "page")}
               className=""
               title="Pages"
             />

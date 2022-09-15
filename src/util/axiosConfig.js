@@ -42,9 +42,9 @@ class Service {
   get(path) {
     return this.service.get(path, {
       headers: {
+        "Access-Control-Allow-Origin": "*",
         Authorization: localStorage.getItem("Authorization"),
         "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Origin": "http://localhost:3000",
         "Access-Control-Allow-Methods": " GET, POST, OPTIONS",
         "Access-Control-Allow-Headers": "Origin, Content-Type, Accept",
       },
