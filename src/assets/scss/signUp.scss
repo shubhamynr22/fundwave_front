@@ -1,0 +1,88 @@
+@import "partials/variables";
+
+.blank-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $gray-4;
+
+  .authorize {
+    width: 420px;
+    background-color: $white-p;
+    padding: 2em;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px #d6d6d6;
+
+    @media (max-width: 550px) {
+      width: 350px;
+    }
+
+    .heading {
+      font-weight: 700;
+      font-size: 1.8rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .sub-heading {
+      font-size: 1rem;
+      margin-top: 1em;
+      display: flex;
+      justify-content: center;
+
+      a {
+        margin-left: 0.4em;
+        text-decoration: none;
+        color: $purple-s;
+        cursor: pointer;
+        font-weight: 600;
+
+        &:hover {
+          color: $purple-p;
+          text-decoration: underline;
+        }
+      }
+
+      span + span {
+        margin-left: 0.5em;
+        color: $purple-p;
+
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+
+      .disable {
+        cursor: not-allowed;
+        color: $black-t;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .edit-phone {
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      color: $purple-p;
+      margin-top: 0.5em;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    form {
+      .custom-form-group {
+        margin-top: 1.5em;
+      }
+      .btn {
+        margin-top: 1.5em;
+      }
+    }
+  }
+}

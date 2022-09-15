@@ -1,0 +1,48 @@
+.dashboard__container {
+  padding: 20px;
+
+  .dashboard_header {
+    display: flex;
+    margin-bottom: 20px;
+
+    .input_container {
+      display: flex;
+      margin: 20px;
+      width: 100%;
+      gap: 20px;
+
+      &__dropdowns {
+        display: flex;
+        width: 30%;
+        gap: 20px;
+      }
+      .custom-dd {
+        width: 100%;
+      }
+
+      .upload_csv {
+        position: relative;
+        display: flex;
+        p {
+          padding: 0;
+          margin: 0;
+          position: absolute;
+          top: -20px;
+          font-size: 14px;
+        }
+        button {
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  .calender {
+    min-height: 28em !important;
+    font-size: 7px !important;
+  }
+
+  .table_row {
+    background-color: #eaeae0 !important;
+  }
+}

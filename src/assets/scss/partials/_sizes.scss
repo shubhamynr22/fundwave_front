@@ -1,0 +1,29 @@
+$sizes: 0, 10, 20, 25, 50, 75, 100;
+$types: "min", "max";
+$dimensions: "H", "W";
+
+@each $size in $sizes {
+  @each $type in $types {
+    @each $dimension in $dimensions {
+      .#{$type}#{$dimension}#{$size} {
+        @if $dimension== "H" {
+          #{$type}-height: #{$size}#{"%"};
+        } @else {
+          #{$type}-width: #{$size}#{"%"};
+        }
+      }
+    }
+  }
+}
+
+@each $size in $sizes {
+  @each $dimension in $dimensions {
+    .#{$dimension}#{$size} {
+      @if $dimension== "H" {
+        height: #{$size}#{"%"};
+      } @else {
+        width: #{$size}#{"%"};
+      }
+    }
+  }
+}

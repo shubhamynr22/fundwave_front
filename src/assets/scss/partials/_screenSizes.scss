@@ -1,0 +1,16 @@
+// create variable for small medium and large screen sizes
+@media (min-width: 576px) {
+  .small-screen {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .medium-screen {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .large-screen {
+    display: none;
+  }
+}

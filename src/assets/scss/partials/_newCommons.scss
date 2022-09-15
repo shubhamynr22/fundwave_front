@@ -1,0 +1,356 @@
+@import "fonts";
+@import "spacing";
+@import "pallet";
+@import "sizes";
+$sizes: "xs", "sm", "md";
+
+// hide class
+@each $size in $sizes {
+  .hide-#{$size} {
+    @if $size == "xs" {
+      @media (max-width: 401px) {
+        display: none !important;
+      }
+    } @else if $size == "sm" {
+      @media (max-width: 601px) {
+        display: none !important;
+      }
+    } @else if $size == "md" {
+      @media (max-width: 769px) {
+        display: none !important;
+      }
+    }
+  }
+}
+// rupee symbol
+.rupee {
+  font-family: "Roboto";
+}
+
+// table
+
+.tableWrapper {
+  td {
+    height: 56px;
+  }
+  th {
+    height: 56px;
+    background-color: #eaeaea;
+  }
+  tbody > :nth-child(even) {
+    background: $tableRow;
+  }
+}
+.table-top-row {
+  display: flex;
+  min-height: 47px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  > .table-top-row_right > *:first-child {
+    margin-left: auto;
+  }
+  > div {
+    display: flex;
+    gap: 1em;
+    // 576px
+    @media (max-width: 576px) {
+      flex: 1;
+      justify-content: space-between;
+    }
+  }
+
+  .global-btns-container {
+    min-height: 47px;
+    border-radius: 8px;
+    box-shadow: none !important;
+    button {
+      background-color: $primary !important;
+      height: 47px !important;
+      border-radius: 8px !important;
+      > div {
+        color: $white !important;
+      }
+    }
+  }
+}
+.customSearchIcon {
+  // mobile and tablet
+  display: none;
+  @media (max-width: 1024px) {
+    display: flex;
+    background-color: $white;
+    border-radius: 10px;
+    max-width: 54px;
+    height: 47px;
+    width: 47px;
+  }
+}
+.customSearchPopover {
+  .MuiPaper-root {
+    border-radius: 10px;
+    box-shadow: none;
+    margin-top: -1px;
+    height: 47px;
+    // 768px
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+}
+.customSearch {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 20em;
+  &.withDropDown {
+    width: 25em;
+  }
+  overflow: unset;
+  background: $white;
+  border-radius: 10px;
+  height: 47px;
+  > div {
+    flex: 1;
+  }
+  @media (max-width: 1024px) {
+    // overflow: hidden;
+    padding: 0;
+    &.outer {
+      display: none;
+    }
+  }
+  .customSearch_input {
+    display: flex;
+    input {
+      border: none;
+      outline: none;
+      color: $common;
+      font-size: 14px;
+    }
+  }
+  .customSearch_select {
+    min-width: 30%;
+    color: $common;
+  }
+  @media (max-width: 767px) {
+    // width: 50%;
+    width: 80vw;
+    // position: absolute;
+    max-width: 80vw;
+  }
+}
+.customSearchPopoverMembers {
+  .MuiPaper-root {
+    overflow: unset !important;
+  }
+}
+
+.filter {
+  border-radius: 10px !important;
+  height: 47px;
+  overflow: hidden;
+  .tab {
+    font-family: "Poppins", sans-serif !important;
+  }
+  // small screen
+  .filterSmall {
+    height: 47px;
+    display: none;
+    width: 100%;
+    margin-top: 0 !important;
+  }
+  @media (max-width: 767px) {
+    min-width: 10em;
+    width: 15em;
+    overflow: visible;
+    .filterSmall {
+      display: flex;
+    }
+    .filterNormal {
+      display: none;
+    }
+  }
+
+  .filterSmall {
+    height: 100%;
+  }
+
+  $height: 47px;
+  .custom-dd {
+    .dd-list-wrapper {
+      min-height: $height;
+    }
+    .dd-selected {
+      min-height: $height;
+    }
+    .dd-list {
+      > div {
+        min-height: $height;
+      }
+    }
+    .dd-one-item {
+      min-height: $height;
+    }
+  }
+}
+.extras {
+  display: flex;
+  background: $white;
+  gap: 1em;
+  flex-direction: row-reverse;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  outline: none !important;
+  margin: 0 !important;
+  span {
+    color: #2e7d32 !important;
+    font-size: 12px !important;
+  }
+  &:active {
+    outline: none;
+    background: #b3ecd9;
+  }
+}
+
+// borderless input with white background
+// input{
+//     background: $white;
+//     border: none;
+//     border-radius: 10px;
+//     color: $common;
+// }
+
+.buttonPrimary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 40px;
+  background-color: $primary;
+  border-radius: 1000px;
+  color: $white;
+  border: none;
+}
+
+.buttonWhite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 40px;
+  background-color: $white;
+  border-radius: 6px;
+  color: $primary;
+  border: none;
+}
+
+.buttonOutlined {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 40px;
+  background-color: $white;
+  border-radius: 6px;
+  color: $primary;
+  border: 1px solid $primary;
+}
+
+.buttonDashed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 40px;
+  background-color: $white;
+  border-radius: 6px;
+  color: $primary;
+  border: 1px dashed $primary;
+}
+.buttonRed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 40px;
+  background-color: $white;
+  border-radius: 6px;
+  color: $negative;
+  border: none;
+  box-shadow: 0px 0px 5px 0px #00000052;
+  &:hover {
+    background-color: $negative;
+    color: $white;
+  }
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.twoColumn {
+  display: flex;
+  gap: 112px;
+  .twoColumn_left {
+    flex: 1;
+  }
+  .twoColumn_right {
+    min-width: 337px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.filterDark {
+  filter: invert(26%) sepia(0%) saturate(0%) hue-rotate(359deg) brightness(95%)
+    contrast(88%);
+}
+
+.filterPrimary {
+  filter: invert(28%) sepia(67%) saturate(3124%) hue-rotate(203deg)
+    brightness(73%) contrast(160%);
+}
+
+.iconSize {
+  height: 20px !important;
+  width: 20px !important;
+}
+.iconSize1 {
+  height: 30px !important;
+  width: 30px !important;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.hoverable {
+  position: relative;
+  .hoverableTarget {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    display: none;
+    background: $white;
+    padding: 0.5em;
+    box-shadow: 0px 0px 5px 0px #00000052;
+    &.hoverableTarget_bottom {
+      top: 1em;
+      left: -7em;
+    }
+  }
+  &:hover {
+    .hoverableTarget {
+      display: flex;
+      min-width: 15em;
+      z-index: 10;
+    }
+  }
+}

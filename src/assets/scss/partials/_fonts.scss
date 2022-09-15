@@ -1,0 +1,149 @@
+@import "pallet";
+
+h1 {
+  font-weight: 500;
+  font-size: 24px;
+  // line-height: 36px;
+  color: $headings;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 16px;
+  // line-height: 24px;
+  color: $headings;
+}
+
+h3 {
+  font-size: 14px;
+  // line-height: 20px;
+  color: $headings;
+}
+
+.fontSize_14 {
+  font-size: 14px;
+}
+
+.fontSize_12 {
+  font-size: 12px;
+}
+
+.fontSize_16 {
+  font-size: 16px;
+}
+
+.fontSize_20 {
+  font-size: 20px;
+}
+
+.fontColor_dark {
+  color: $headings;
+}
+
+.fontColor_red {
+  color: $red;
+}
+
+.primaryColor {
+  color: $primary !important;
+}
+
+.bolder {
+  font-weight: 500;
+}
+
+// mobile text
+// @for $i from 1 through 3{
+//     h#{$i}{
+//         color: $headings;
+//         @media (max-width: 767px) {
+//             font-size: 18px;
+//             // line-height: 24px;
+//         }
+//     }
+// }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 18px;
+  }
+}
+
+button {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  // line-height: 20px;
+}
+
+body {
+  font-size: 12px;
+  // line-height: 18px;
+  color: $common;
+  p {
+    font-size: 12px;
+    // line-height: 18px;
+    color: $common;
+  }
+
+  // for mobile
+  @media (max-width: 767px) {
+    font-size: 10px;
+    // line-height: 15px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+}
+
+.fs14 {
+  font-size: 14px;
+}
+
+.hyperLink {
+  font-size: 12px;
+  // line-height: 16px;
+  color: $hyperLink;
+  cursor: pointer;
+}
+
+table {
+  th {
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    // line-height: 20px !important;
+    letter-spacing: 0.1px !important;
+    color: $headings !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    vertical-align: middle !important;
+  }
+  td {
+    font-size: 12px !important;
+    // line-height: 18px !important;
+    color: $tableContents !important;
+
+    // for mobile
+    @media (max-width: 767px) {
+      font-size: 10px !important;
+      // line-height: 15px !important;
+    }
+  }
+}
+
+// $sizes : 12px, 14px, 16px, 18px, 24px;
+// $screens : sm, md, lg, xl;
+
+// @each $size in $sizes{
+//     @each $screen in $screens{
+//         .f#{$size}#{$screen}{
+//             font-size: #{$size} !important;
+// line-height: #{$size} !important;
+//         }
+//     }
+// }
+
+.textCenter {
+  text-align: center;
+}

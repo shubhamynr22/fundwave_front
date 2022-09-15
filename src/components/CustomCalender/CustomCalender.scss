@@ -1,0 +1,25 @@
+.customCalender_inputWrapper {
+  background: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.customCalender {
+  cursor: pointer;
+  background: transparent;
+  color: #919191;
+  border: none;
+  font-size: 14px;
+  position: relative;
+  padding-left: 40px;
+  outline: none;
+  max-width: 16.5em;
+  height: 47px;
+}
+.customCalender_icon {
+  position: absolute;
+  height: 40%;
+  top: 50%;
+  transform: translateY(-55%);
+  left: 10px;
+}
